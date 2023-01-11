@@ -1,0 +1,48 @@
+{
+    "name": "Sudoku.com Shortcuts",
+    "version": "0.1.0",
+    "description": "This is an unofficial, free and open source, chrome extension enables shortcuts on Sudoku.com",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*.sudoku.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.sudoku.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "assets/bookmark.png",
+                "assets/play.png",
+                "assets/delete.png",
+                "assets/save.png"
+            ],
+            "matches": [
+                "https://*.sudoku.com/*"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "assets/ext-icon.png",
+            "24": "assets/ext-icon.png",
+            "32": "assets/ext-icon.png"
+        },
+        "default_title": "Sudoku.com Shortcuts",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
